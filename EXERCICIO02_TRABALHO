@@ -6,7 +6,7 @@ Inicio
     escreva("Digite o número inteiro: ");
     leia: (num);
 
-    Resultado ← num
+    Resultado ← num;
 
     se (num > 1000) ou (num = 0) entao
         escreva("Número digitado incorreto. Digite um valor entre 1 e 1000");
@@ -17,8 +17,8 @@ Inicio
             Resultado ← num mod 100;
         fimse;
 
-        se (Resultado > 10) entao ;
-            D ← Resultado div 10
+        se (Resultado > 10) entao
+            D ← Resultado div 10;
             escreva( "A quantidade de Dezenas é: " + D);
             Resultado ← num mod 10;
         fimse;
