@@ -17,14 +17,14 @@ Inicio
             Resultado ← num mod 100;
         fimse;
 
-        se (Resultado > 10) entao 
+        se (Resultado > 10) entao ;
             D ← Resultado div 10
             escreva( "A quantidade de Dezenas é: " + D);
-            Resultado ← num mod 10
+            Resultado ← num mod 10;
         fimse;
 
         se (Resultado > 1)
-            U ← Resultado div 1
+            U ← Resultado div 1;
             escreva( "A quantidade de Unidades é: " + U);
         fimse;
     fimse;
