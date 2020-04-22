@@ -1,0 +1,74 @@
+Programa Calculo_Horas_Trabalhadas_E_Beneficios;
+
+Var
+    real: vHorasTrabalhadas, vValorHora, vSalarioLiquido, vSalarioBruto, vValorINSS, vValorIR, VvalorFGTS;
+
+inicio
+
+    imprima("Informe a quantidade de horas trabalhadas: ");
+    ler(vHorasTrabalhadas);
+    imprima("Informe o valor recebido por hora: ");
+    ler(vValorHora);
+
+//Calculo IR
+vSalarioBruto ← vHorasTrabalhadas * vValorHora;
+
+imprima("O salário bruto é: " + vSalarioBruto);
+
+se(vSalarioBruto =< 1.903,98) entao
+    imprima("não declara imposto de renda");
+senao
+    se(vSalarioBruto > 1.903,98 ^ < 2.826,65) entao
+        vValorIR ← vSalarioBruto * 0,075;
+        imprima("o calculo de seu imposto de renda é de: " + vValorIR);
+    senao
+        se(vSalarioBruto > 2.826,65 ^ < 3.751,05) entao
+            vValorIR ← vSalarioBruto * 0,15;
+            imprima("o calculo de seu imposto de renda é de: " + vValorIR);
+        senao
+            se(vSalarioBruto > 3.751,05 ^ < 4.664,68) entao
+                vValorIR ← vSalarioBruto * 0,225;
+                imprima("o calculo de seu imposto de renda é de: " + vValorIR);
+            senao
+                se(vSalarioBruto > 4.664,68) entao
+                    vValorIR ← vSalarioBruto * 0,275;
+                    imprima("o calculo de seu imposto de renda é de: " + vValorIR);
+                fimse;
+            fimse;
+        fimse;
+    fimse;
+fimse;
+
+//Calculo INSS
+
+se(vSalarioBruto <= 1.693,72) entao
+    vValorINSS ← vSalarioBruto * 0,08;
+    imprima("o calculo de seu INSS é: " + vValorINSS);
+senao
+    se(vSalarioBruto > 1.693,72 ^ < 2.822,91) entao
+        vValorINSS ← vSalarioBruto * 0,09;
+        imprima("o calculo de seu INSS é: " + vValorINSS);
+    senao
+        se(vSalarioBruto > 2.822,91 ^ < 5.645,80) entao
+            vValorINSS ← vSalarioBruto * 0,11;
+            imprima("o calculo de seu INSS é: " + vValorINSS);
+        senao
+            se(vSalarioBruto > 5.645,81) entao
+                vValorINSS ←  621,03;
+                imprima("o calculo de seu INSS é: " + vValorINSS);
+            fimse;
+        fimse;
+    fimse;
+fimse;
+
+//calculo FGTS
+
+    vValorFGTS ← vSalarioBruto * 0,08;
+    imprima("o calculo de seu FGTS é: " + vValorFGTS);
+
+//calculo Salario Liquido
+
+    vSalarioLiquido ← vSalarioBruto - vValorIR - vValorINSS
+    imprima("o seu salario liquido é: " + vSalarioLiquido);
+
+fim.
